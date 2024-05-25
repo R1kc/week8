@@ -1,0 +1,115 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reddit+Mono:wght@200..900&display=swap');
+
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: rgb(16, 54, 160);
+    display: grid;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+    grid-template-rows: 0.3fr 1.3fr 0.6fr 0.7fr 0.5fr;
+    grid-template-areas:
+    "header menu menu"
+    "hero hero hero"
+    "main main image"
+    "main main extra"
+    "footer footer footer";
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header {
+    align-items: center;
+    display: grid;
+    background-color: rgb(42, 211, 42);
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+menu {
+    align-items: center;
+    display: grid;
+    background-color: rgba(207, 195, 26, 0.918);
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    align-items: center;
+    display: grid;
+    background-color: rgba(12, 182, 159, 0.671);
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    display: grid;
+    background-color: rgb(83, 41, 199);
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra {
+    align-items: center;
+    display: grid;
+    background-color: rgb(104, 106, 196);
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+main {
+    align-items: center;
+    display: grid;
+    background-color: rgb(39, 122, 6);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+footer {
+    align-items: center;
+    display: grid;
+    background-color: rgb(204, 18, 148);
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1.2fr 1fr;
+        grid-template-rows: 0.3fr 1fr 1.2fr 0.5fr 0.5fr;
+        grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu footer footer"
+        "menu extra image";
+    }
+ }
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 0.7fr 1fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "footer"
+        "extra"
+        "image";
+    }
+}
